@@ -209,17 +209,17 @@ section {
 .hero__inner {
   position: relative;
   z-index: 2;
-  max-width: 20ch;
+  max-width: min(60%, 60ch);
 }
 
 .hero h1 {
-  font-size: clamp(2.6rem, 6.2vw, 5.6rem);
+  font-size: clamp(2.6rem, 6.4vw, 6.4rem);
   margin-bottom: 2rem;
 }
 
 .hero__support {
-  font-size: 1.15rem;
-  max-width: 32ch;
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  max-width: 34ch;
   color: var(--paper);
   opacity: 0.85;
   margin-bottom: 2.6rem;
@@ -230,10 +230,10 @@ section {
   position: absolute;
   z-index: 1;
   top: 50%;
-  right: -6vw;
+  right: -4vw;
   transform: translateY(-50%);
-  width: min(60vw, 760px);
-  height: min(60vw, 760px);
+  width: min(44vw, 620px);
+  height: min(44vw, 620px);
   pointer-events: none;
 }
 
@@ -246,17 +246,17 @@ section {
 .hero__rings circle {
   fill: none;
   stroke: var(--gold);
-  stroke-width: 0.6;
+  stroke-width: 0.8;
   transform-origin: center;
   transform-box: fill-box;
 }
 
-.ring-1 { opacity: 0.28; animation: breathe 9s ease-in-out infinite; }
-.ring-2 { opacity: 0.22; animation: breathe 11s ease-in-out infinite reverse; }
-.ring-3 { opacity: 0.17; animation: breathe 13s ease-in-out infinite; }
-.ring-4 { opacity: 0.13; animation: breathe 16s ease-in-out infinite reverse; }
-.ring-5 { opacity: 0.10; animation: breathe 19s ease-in-out infinite; }
-.ring-6 { opacity: 0.07; animation: breathe 22s ease-in-out infinite reverse; }
+.ring-1 { opacity: 0.42; animation: breathe 9s ease-in-out infinite; }
+.ring-2 { opacity: 0.34; animation: breathe 11s ease-in-out infinite reverse; }
+.ring-3 { opacity: 0.27; animation: breathe 13s ease-in-out infinite; }
+.ring-4 { opacity: 0.21; animation: breathe 16s ease-in-out infinite reverse; }
+.ring-5 { opacity: 0.16; animation: breathe 19s ease-in-out infinite; }
+.ring-6 { opacity: 0.11; animation: breathe 22s ease-in-out infinite reverse; }
 
 @keyframes breathe {
   0%,
@@ -292,12 +292,25 @@ section {
 }
 
 /* ---------- Intro block ---------- */
+.intro .wrap {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.intro .eyebrow {
+  margin: 0;
+  padding-top: 0.7rem;
+}
+
 .intro p {
-  font-size: 1.5rem;
-  line-height: 1.5;
-  max-width: 30ch;
+  font-size: clamp(1.5rem, 2.6vw, 2.4rem);
+  line-height: 1.35;
+  max-width: 26ch;
   font-family: var(--serif);
   font-weight: 400;
+  margin: 0;
 }
 
 /* ---------- Featured projects ---------- */
@@ -793,6 +806,15 @@ textarea {
     font-size: 0.72rem;
   }
 
+  .site-header .wrap {
+    gap: 0.75rem;
+  }
+
+  .site-header .wordmark {
+    font-size: 1.05rem;
+    letter-spacing: 0.16em;
+  }
+
   .hero__rings {
     right: -20vw;
     opacity: 0.7;
@@ -801,8 +823,13 @@ textarea {
   .projects-grid,
   .services-list,
   .split,
-  .steps {
+  .steps,
+  .intro .wrap {
     grid-template-columns: 1fr;
+  }
+
+  .intro .wrap {
+    gap: 1.5rem;
   }
 
   .split { gap: 2.5rem; }
